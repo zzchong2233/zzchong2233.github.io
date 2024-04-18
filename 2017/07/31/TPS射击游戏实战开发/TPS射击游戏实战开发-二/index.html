@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>TPS射击游戏实战开发(二) | 云之彼端</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Mecanim动画系统介绍">
+<meta name="keywords" content="-游戏开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TPS射击游戏实战开发(二)">
+<meta property="og:url" content="https://zzchong23.coding.me/2017/07/31/TPS射击游戏实战开发/TPS射击游戏实战开发-二/index.html">
+<meta property="og:site_name" content="云之彼端">
+<meta property="og:description" content="Mecanim动画系统介绍">
+<meta property="og:image" content="https://t1.picb.cc/uploads/2018/12/03/JR9WJN.jpg">
+<meta property="og:image" content="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/01.gif">
+<meta property="og:image" content="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/02.gif">
+<meta property="og:image" content="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/03.gif">
+<meta property="og:image" content="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/04.gif">
+<meta property="og:image" content="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/05.gif">
+<meta property="og:image" content="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/06.gif">
+<meta property="og:image" content="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/07.gif">
+<meta property="og:image" content="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/08.gif">
+<meta property="og:image" content="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/09.gif">
+<meta property="og:image" content="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/10.gif">
+<meta property="og:updated_time" content="2018-12-03T02:11:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TPS射击游戏实战开发(二)">
+<meta name="twitter:description" content="Mecanim动画系统介绍">
+<meta name="twitter:image" content="https://t1.picb.cc/uploads/2018/12/03/JR9WJN.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="云之彼端" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.jpg" src="/img/avatar.jpg" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">zhaochong</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">zc&#39;s Blog</p>
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                            <li><a href="/works">作品展示</a></li>
+                        
+                            <li><a href="/record">留言打卡</a></li>
+                        
+                            <li><a href="/tags">文章分类</a></li>
+                        
+                            <li><a href="https://github.com/zzchong2233">Github</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=CXNhaGZqYWZnbjs8SXh4J2pmZA" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/zzchong2233" title="github">github</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/机器学习/" style="font-size: 13.33px;">-机器学习</a> <a href="/tags/杂谈/" style="font-size: 16.67px;">-杂谈</a> <a href="/tags/游戏开发/" style="font-size: 20px;">-游戏开发</a> <a href="/tags/进阶知识点/" style="font-size: 18.33px;">-进阶知识点</a> <a href="/tags/C语言/" style="font-size: 15px;">C语言</a> <a href="/tags/Linux/" style="font-size: 11.67px;">Linux</a> <a href="/tags/c/" style="font-size: 10px;">c#</a> <a href="/tags/nas/" style="font-size: 11.67px;">nas</a> <a href="/tags/ssm/" style="font-size: 15px;">ssm</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/前端技术/" style="font-size: 13.33px;">前端技术</a> <a href="/tags/机器学习/" style="font-size: 13.33px;">机器学习</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://baidu.com/">百度</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://google.com/">谷歌</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://sina.com/">新浪</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://cn.bing.com/">必应</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.sohu.com/">搜狐</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">zhaochong</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">zhaochong</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">zc&#39;s Blog</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                    <li><a href="/works">作品展示</a></li>
+                
+                    <li><a href="/record">留言打卡</a></li>
+                
+                    <li><a href="/tags">文章分类</a></li>
+                
+                    <li><a href="https://github.com/zzchong2233">Github</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=CXNhaGZqYWZnbjs8SXh4J2pmZA" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/zzchong2233" title="github">github</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-TPS射击游戏实战开发/TPS射击游戏实战开发-二" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/31/TPS射击游戏实战开发/TPS射击游戏实战开发-二/" class="article-date">
+      <time datetime="2017-07-31T01:50:19.000Z" itemprop="datePublished">2017-07-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      TPS射击游戏实战开发(二)
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Unity3D/">Unity3D</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/游戏开发/">-游戏开发</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <pre><code>Mecanim动画系统介绍
+</code></pre><p><br></p>
+<center><img src="https://t1.picb.cc/uploads/2018/12/03/JR9WJN.jpg" alt="welcome"></center>
+
+<a id="more"></a>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>为了让游戏更加真实，有时需要角色拥有丰富的角色动作，U3D的动画系统可以让我们方便进行动画的播放和管理</p>
+<h2 id="Animator"><a href="#Animator" class="headerlink" title="Animator"></a>Animator</h2><p>U3D 5 新加入的动画组件</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p><br></p>
+<center><img src="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/01.gif" alt="01"></center>
+
+<ol>
+<li>Controller: 自己定义的 Animator Controller组件，用来控制动画的播放的主要功能组件</li>
+<li>Avatar: 人物模型</li>
+<li>Apply Root Motion:  在Unity3D动画中，模型的位置、角度经常会发生变化，我们需要决定是否将模型在动画中发生的这些变换化用到实际模型（GameObject）中。我们将这个选项的√去除，防止动画产生位置影响</li>
+<li>Update Mode：更新模式：Normal表示使用Update进行更新，Animate Physics表示使用FixUpdate进行更新（一般用在和物体有交互的情况下），Unscale Time表示无视timeScale进行更新（一般用在UI动画中）。</li>
+<li>Culling Mode：剔除模式：Always Animate表示即使摄像机看不见也要进行动画播放的更新，Cull Update Transform表示摄像机看不见时停止动画播放但是位置会继续更新，Cull Completely表示摄像机看不见时停止动画的所有更新。</li>
+</ol>
+<h2 id="使用动画系统"><a href="#使用动画系统" class="headerlink" title="使用动画系统"></a>使用动画系统</h2><h3 id="导入人物模型"><a href="#导入人物模型" class="headerlink" title="导入人物模型"></a>导入人物模型</h3><p><a href="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/Swat.zip" target="_blank" rel="external">这里提供我使用的资源包</a></p>
+<p>直接将 你的人物.fbx 文件拖入Project面板</p>
+<p><br></p>
+<center><img src="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/02.gif" alt="02"></center>
+
+<p>点击导入的模型，将模型设置为人形</p>
+<p><br></p>
+<center><img src="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/03.gif" alt="03"></center>
+
+<h3 id="将人物模型拖入Hierarchy面板"><a href="#将人物模型拖入Hierarchy面板" class="headerlink" title="将人物模型拖入Hierarchy面板"></a>将人物模型拖入Hierarchy面板</h3><h3 id="为模型对象添加-Animator"><a href="#为模型对象添加-Animator" class="headerlink" title="为模型对象添加 Animator"></a>为模型对象添加 Animator</h3><ol>
+<li>在project 空白区域右击 Creat -&gt; Animator Controller </li>
+<li>为创建的人物object添加组件 Animator 并绑定上一步创建的控制器</li>
+<li>双击控制器</li>
+</ol>
+<h3 id="状态机"><a href="#状态机" class="headerlink" title="状态机"></a>状态机</h3><p><br></p>
+<center><img src="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/04.gif" alt="04"></center>
+
+<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><ul>
+<li>状态机是用来管理动画的基本单位</li>
+<li>一个初始的控制器有着以上三个基本状态 Entry: 初始状态  Any State: 任何状态  Exit: 退出</li>
+</ul>
+<h4 id="创建第一个动画"><a href="#创建第一个动画" class="headerlink" title="创建第一个动画"></a>创建第一个动画</h4><ol>
+<li>右击空白处 Creat State -&gt; Empty 创建一个新的状态机</li>
+<li>这是我们会看到 从 Entry有一条线连接到了新创建的状态机上，这意味着控制器一进入就会播放 这个状态机的动画</li>
+<li>导入动画文件，与人物的导入方法一样，直接拖入Project ，新建一个Animations 文件夹专门用来存放 动画文件</li>
+<li>双击新状态机 在检视面板可以看到 Motion一项为 None,拖入或者点击右边的圆点来导入一个动画文件</li>
+</ol>
+<p>同样动画文件也需要设置为人形，并且设置为循环播放，将动画的模型更改为你的模型（在Animations文件夹中 Ctrl + A全选所有文件可以批量更改，如果不更改模型，U3D会自动用一个自带模型的骨骼来播放动画，就会显得不协调）</p>
+<p><br></p>
+<center><img src="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/05.gif" alt="05"></center>
+
+<p>运行一下试试看</p>
+<p><br></p>
+<center><img src="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/06.gif" alt="06"></center>
+
+<p>这鬼畜的动作（-。-）</p>
+<h3 id="Blend-Tree-混合树动画系统"><a href="#Blend-Tree-混合树动画系统" class="headerlink" title="Blend Tree 混合树动画系统"></a>Blend Tree 混合树动画系统</h3><p>可以用参数来控制动画的播放，优点是可以平滑的切换动画</p>
+<h3 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h3><ol>
+<li>右键 Creat State -&gt; From New Blend Tree 创建一个混合动画树</li>
+<li>双击动画树，点击中间的根节点，把右侧的检视面板中的 Blend Type 设置为 2D simple Directional</li>
+</ol>
+<p>接下来用操作演示 如何创建变量</p>
+<p><br></p>
+<center><img src="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/07.gif" alt="07"></center>
+
+<p>在右侧的设置面板中用刚刚创建的两个变量设置坐标</p>
+<p><br></p>
+<center><img src="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/08.gif" alt="08"></center>
+
+<p>点击右下角的 加号 -&gt;Add Motion Field 添加新的动画区，并绑定动画，设置相应的坐标</p>
+<p>我设置的9个动画状态</p>
+<p><br></p>
+<center><img src="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/09.gif" alt="09"></center>
+
+<p>来看看如何用代码控制动画的播放<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">using UnityEngine;</div><div class="line"></div><div class="line">public class SwatC : MonoBehaviour &#123;</div><div class="line">    private Animator anim;</div><div class="line">    //存储变化的插值</div><div class="line">    private float Lerp_x;</div><div class="line">    private float Lerp_y;</div><div class="line">    private bool isAction;</div><div class="line"></div><div class="line">    public GameObject speed;</div><div class="line"></div><div class="line">    void Start () &#123;</div><div class="line">        //获取动画控制组件</div><div class="line">        anim = GetComponent&lt;Animator&gt;();</div><div class="line">        isAction = false;</div><div class="line">       </div><div class="line">    &#125;</div><div class="line">	</div><div class="line">	</div><div class="line">	void FixedUpdate () &#123;</div><div class="line">        </div><div class="line">        if (Input.GetMouseButton(0))</div><div class="line">        &#123;</div><div class="line">            if (!anim.GetBool(&quot;Shift&quot;))</div><div class="line">            &#123;</div><div class="line">                anim.SetBool(&quot;Fire&quot;, true);</div><div class="line">                </div><div class="line">            &#125;</div><div class="line">            else</div><div class="line">            &#123;</div><div class="line">                anim.SetBool(&quot;Shift&quot;, false);</div><div class="line">                speed.SendMessage(&quot;setSpeed&quot;, 5f);</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">        &#125;</div><div class="line">        else</div><div class="line">        &#123;</div><div class="line">            anim.SetBool(&quot;Fire&quot;, false);</div><div class="line">            isAction = true;</div><div class="line">        &#125;</div><div class="line">        if (Input.GetKeyDown(KeyCode.LeftShift))</div><div class="line">        &#123;</div><div class="line">            if (!anim.GetBool(&quot;Shift&quot;))</div><div class="line">            &#123;</div><div class="line">                anim.SetBool(&quot;Shift&quot;, true);</div><div class="line">                anim.SetBool(&quot;Ctrl&quot;, false);</div><div class="line">                speed.SendMessage(&quot;setSpeed&quot;,10f);</div><div class="line">            &#125;</div><div class="line">            else</div><div class="line">            &#123;</div><div class="line">                anim.SetBool(&quot;Shift&quot;, false);</div><div class="line">                speed.SendMessage(&quot;setSpeed&quot;, 5f);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        if (Input.GetKeyDown(KeyCode.LeftControl))</div><div class="line">        &#123;</div><div class="line">            if (!anim.GetBool(&quot;Ctrl&quot;))</div><div class="line">            &#123;</div><div class="line">                anim.SetBool(&quot;Ctrl&quot;, true);</div><div class="line">                anim.SetBool(&quot;Shift&quot;, false);</div><div class="line">                speed.SendMessage(&quot;setSpeed&quot;, 2f);</div><div class="line">            &#125;</div><div class="line">            else</div><div class="line">            &#123;</div><div class="line">                anim.SetBool(&quot;Ctrl&quot;, false);</div><div class="line">                speed.SendMessage(&quot;setSpeed&quot;, 5f);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        if (Input.GetKey(KeyCode.W))</div><div class="line">        &#123;</div><div class="line">            Lerp(0, 1);</div><div class="line">            isAction = true;</div><div class="line">        &#125;</div><div class="line">      </div><div class="line"></div><div class="line">        if (Input.GetKey(KeyCode.A))</div><div class="line">        &#123;</div><div class="line">            Lerp(-1, 0);</div><div class="line">            isAction = true;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        if (Input.GetKey(KeyCode.W)&amp;&amp; Input.GetKey(KeyCode.A))</div><div class="line">        &#123;</div><div class="line">            Lerp(-1, 1);</div><div class="line">            isAction = true;</div><div class="line">        &#125;</div><div class="line"></div><div class="line"></div><div class="line">        if (Input.GetKey(KeyCode.S))</div><div class="line">        &#123;</div><div class="line">            Lerp(0, -1);</div><div class="line">            isAction = true;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        if (Input.GetKey(KeyCode.S) &amp;&amp; Input.GetKey(KeyCode.A))</div><div class="line">        &#123;</div><div class="line">            Lerp(-1, -1);</div><div class="line">            isAction = true;</div><div class="line">        &#125;</div><div class="line"></div><div class="line"></div><div class="line">        if (Input.GetKey(KeyCode.D))</div><div class="line">        &#123;</div><div class="line">            Lerp(1, 0);</div><div class="line">            isAction = true;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        if (Input.GetKey(KeyCode.S) &amp;&amp; Input.GetKey(KeyCode.D))</div><div class="line">        &#123;</div><div class="line">            Lerp(1, -1);</div><div class="line">            isAction = true;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        if (Input.GetKey(KeyCode.W) &amp;&amp; Input.GetKey(KeyCode.D))</div><div class="line">        &#123;</div><div class="line">            Lerp(1, 1);</div><div class="line">            isAction = true;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        if (!Input.anyKey)</div><div class="line">        &#123;</div><div class="line">            isAction = false;</div><div class="line">            Lerp(0, 0);</div><div class="line">            SetBlendTree();</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        if (isAction)</div><div class="line">        &#123;</div><div class="line">            SetBlendTree();</div><div class="line">        &#125;</div><div class="line">      </div><div class="line">    &#125;</div><div class="line"></div><div class="line">    //动画渐变插值计算</div><div class="line">    void Lerp(float target_x,float target_y)</div><div class="line">    &#123;</div><div class="line">        Lerp_x = Mathf.Lerp(Lerp_x,target_x,0.15f);</div><div class="line">        Lerp_y = Mathf.Lerp(Lerp_y, target_y,0.15f);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    //设置混合动画</div><div class="line">    void SetBlendTree()</div><div class="line">    &#123;</div><div class="line">        anim.SetFloat(&quot;X&quot;, Lerp_x);</div><div class="line">        anim.SetFloat(&quot;Y&quot;, Lerp_y);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>主要方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Animator anim;</div><div class="line">//获取动画组件</div><div class="line">anim=getCompent&lt;Animator&gt;();</div><div class="line">//使用 set方法控制 自己定义的变量的值</div><div class="line">anim.setBool(&quot;你定义的变量的名称&quot;,true/false)</div><div class="line">anim.setFloat(&quot;你定义的变量的名称&quot;,value)</div><div class="line">通过控制变量的变化来切换动画</div><div class="line">还有其他几种方法 大家可以自己试试</div></pre></td></tr></table></figure></p>
+<p>将这个脚本绑定在人物模型上就可以控制角色前后左右移动以及奔跑下蹲了<br>插值计算主要是用来进行动画的过渡平滑</p>
+<p>我的三个混合树，（混合树之间的连线，可以右击树 Make Transition 并定义新的变量实现树之间的转换）</p>
+<p><br></p>
+<center><img src="http://osyc94hhl.bkt.clouddn.com/TPS%E5%B0%84%E5%87%BB%E6%B8%B8%E6%88%8F%E5%AE%9E%E6%88%98%E5%BC%80%E5%8F%91%28%E4%BA%8C%29/10.gif" alt="10"></center>
+
+
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>下一篇文章介绍人物控制器和鼠标控制镜头移动</p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/07/31/TPS射击游戏实战开发/TPS射击游戏实战开发-二/">TPS射击游戏实战开发(二)</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 zhaochong 的个人博客">zhaochong</a></p>
+        <p><span>发布时间:</span>2017年07月31日 - 09时50分</p>
+        <p><span>最后更新:</span>2018年12月03日 - 10时11分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/07/31/TPS射击游戏实战开发/TPS射击游戏实战开发-二/" title="TPS射击游戏实战开发(二)">https://zzchong23.coding.me/2017/07/31/TPS射击游戏实战开发/TPS射击游戏实战开发-二/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://zzchong23.coding.me/2017/07/31/TPS射击游戏实战开发/TPS射击游戏实战开发-二/　　作者: zhaochong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2017/07/31/TPS射击游戏实战开发/TPS射击游戏实战开发-终/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          TPS射击游戏实战开发(终)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/30/TPS射击游戏实战开发/TPS射击游戏实战开发-一/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">TPS射击游戏实战开发(一)</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Animator"><span class="toc-number">2.</span> <span class="toc-text">Animator</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#属性"><span class="toc-number">2.1.</span> <span class="toc-text">属性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用动画系统"><span class="toc-number">3.</span> <span class="toc-text">使用动画系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#导入人物模型"><span class="toc-number">3.1.</span> <span class="toc-text">导入人物模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将人物模型拖入Hierarchy面板"><span class="toc-number">3.2.</span> <span class="toc-text">将人物模型拖入Hierarchy面板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为模型对象添加-Animator"><span class="toc-number">3.3.</span> <span class="toc-text">为模型对象添加 Animator</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#状态机"><span class="toc-number">3.4.</span> <span class="toc-text">状态机</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概念"><span class="toc-number">3.4.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建第一个动画"><span class="toc-number">3.4.2.</span> <span class="toc-text">创建第一个动画</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Blend-Tree-混合树动画系统"><span class="toc-number">3.5.</span> <span class="toc-text">Blend Tree 混合树动画系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#具体操作"><span class="toc-number">3.6.</span> <span class="toc-text">具体操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结语"><span class="toc-number">4.</span> <span class="toc-text">结语</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNzQzNy8xMzk3MQ==" style="padding:10px">
+    <script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+    
+           if (typeof LivereTower === 'function') { return; }
+    
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+    
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+    </script>
+    <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/07/31/TPS射击游戏实战开发/TPS射击游戏实战开发-终/" title="上一篇: TPS射击游戏实战开发(终)">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/07/30/TPS射击游戏实战开发/TPS射击游戏实战开发-一/" title="下一篇: TPS射击游戏实战开发(一)">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/11/28/机器学习/tf.data模块/">tf.data实例</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/10/nas/米家智能设备通过-HomeAssitant-接入homeKit/">米家智能设备通过 HomeAssistant 接入homeKit</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/07/26/nas/使用frpc进行nas服务访问/">使用frpc进行nas服务访问</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/05/15/机器学习/softmax多分类/">softmax多分类</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/04/24/机器学习/tf.keras概述/">tf.keras概述</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/03/11/机器学习/tensorflow2.0介绍与安装/">Tensorflow2.0</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/02/18/windows/windows-kms激活/">windows-kms激活</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/01/机器学习/tensorflow开发环境搭建/">tensorflow开发环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/16/工作笔记/第六周工作笔记/">第六周工作笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/10/工作笔记/第四五周工作笔记/">第四五周工作笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/27/工作笔记/第三周工作笔记/">第三周工作笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/19/工作笔记/第二周工作笔记/">第二周工作笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/12/工作笔记/第一周工作笔记/">第一周工作笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/16/网页开发/JS立即执行函数的使用场景/">Js立即执行函数的使用场景</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/26/Linux/Apache部署TP项目pathInfo的设置/">Apache部署TP项目pathInfo的设置</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/26/Linux/搭建lamp环境/">搭建lamp环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/19/网页开发/ES6规范中的import和export踩坑/">ES6规范中的import和export踩坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/01/16/机器学习/基于DeepFaceLabTorrent的人脸替换/">基于DeepFaceLabTorrent的人脸替换</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/03/博客搭建/告知/">告知</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/16/博客搭建/博客迁移踩坑总结/">博客迁移踩坑总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/23/网页开发/jquery实现透视镜/">jquery实现透视镜</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/11/网页开发/css3实现精灵球/">css3实现精灵球</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/28/Unity3D开发/Unity3D开发-五/">Unity3D开发(五)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/19/Unity3D开发/Unity3D开发-四/">Unity3D开发(四)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/13/Unity3D开发/Unity3D开发-三/">Unity3D开发(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/23/Unity3D进阶/Unity3D资源合集/">Unity3D资源合集</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/16/Unity3D开发/Unity3D开发-二/">Unity3D开发(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/16/c-简单开发/c-简单开发-一/">c#简单开发(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/09/Unity3D开发/Unity3D开发-一/">Unity3D开发(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/27/编译原理初探/编译原理初探-五/">编译原理初探(五)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/26/编译原理初探/编译原理初探-四/">编译原理初探(四)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/25/编译原理初探/编译原理初探-三/">编译原理初探(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/23/编译原理初探/编译原理初探-二/">编译原理初探(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/22/编译原理初探/编译原理初探-一/">编译原理初探(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/14/Unity3D进阶/Unity3D进阶-终/">Unity3D进阶(终)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/13/Unity3D进阶/Unity3D进阶-七/">Unity3D进阶(七)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/10/Unity3D进阶/Unity3D进阶-六/">Unity3D进阶(六)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/08/Unity3D进阶/Unity3D进阶-五/">Unity3D进阶(五)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/07/Unity3D进阶/Unity3D进阶-四/">Unity3D进阶(四)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/06/Unity3D进阶/Unity3D进阶-三/">Unity3D进阶(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/05/Unity3D进阶/Unity3D进阶-二/">Unity3D进阶(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/02/Unity3D进阶/Unity3D进阶-一/">Unity3D进阶(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/31/TPS射击游戏实战开发/TPS射击游戏实战开发-终/">TPS射击游戏实战开发(终)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/31/TPS射击游戏实战开发/TPS射击游戏实战开发-二/">TPS射击游戏实战开发(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/30/TPS射击游戏实战开发/TPS射击游戏实战开发-一/">TPS射击游戏实战开发(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/29/Unity3D游戏开发预备课/Unity3D游戏开发预备课-终/">Unity3D游戏开发预备课(终)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/27/Unity3D游戏开发预备课/Unity3D游戏开发预备课-九/">Unity3D游戏开发预备课(九)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/26/Unity3D游戏开发预备课/Unity3D游戏开发预备课-八/">Unity3D游戏开发预备课(八)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/25/Unity3D游戏开发预备课/Unity3D游戏开发预备课-七/">Unity3D游戏开发预备课(七)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/24/Unity3D游戏开发预备课/Unity3D游戏开发预备课-六/">Unity3D游戏开发预备课(六)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/22/Unity3D游戏开发预备课/Unity3D游戏开发预备课-五/">Unity3D游戏开发预备课(五)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/22/Unity3D游戏开发预备课/Unity3D游戏开发预备课-四/">Unity3D游戏开发预备课(四)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/19/Unity3D游戏开发预备课/Unity3D游戏开发预备课-三/">Unity3D游戏开发预备课(三)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/18/Unity3D游戏开发预备课/Unity3D游戏开发预备课-二/">Unity3D游戏开发预备课(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/17/Unity3D游戏开发预备课/Unity3D游戏开发预备课-一/">Unity3D游戏开发预备课(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/14/博客搭建/右键菜单/">右键菜单</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/12/博客搭建/博客的优化/">博客的优化</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/12/博客搭建/利用hexo-github搭建个人网站的总结/">利用Hexo+github搭建个人网站的总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/10/博客搭建/个人博客开通/">个人博客开通</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019-2021 zhaochong
+            </div>
+            <div class="footer-right">
+                <p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >用户到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span> </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+		 window.onload = function (){
+             $('#lv-container').css('background','#fff');
+             $('#lv-container').css('borderRadius','10px');  
+             $('#lv-container').css('width','90%');
+             $('#lv-container').css('margin','50px auto');
+             $('#lv-container').css('boxShadow','20px 20px 10px #222');           
+        }
+        $(document).ready(function() {
+	
+            var c1="<div onclick='c1_c()' id='c1' style='display:none;width:100px;height:100px;border-radius:50px;border:solid rgb(100,100,100) 1px;position:absolute;background-image:url(/img/bg/a.jpg)'></div>";
+	var c2="<div onclick='c2_c()' id='c2' style='display:none;width:100px;height:100px;border-radius:50px;border:solid rgb(100,100,100) 1px;position:absolute;background-image:url(/img/bg/b.jpg)'></div>";
+	var c3="<div onclick='c3_c()' id='c3' style='display:none;width:100px;height:100px;border-radius:50px;border:solid rgb(100,100,100) 1px;position:absolute;background-image:url(/img/bg/c.jpg)'></div>";
+	var c4="<div onclick='c4_c()' id='c4' style='display:none;width:100px;height:100px;border-radius:50px;border:solid rgb(100,100,100) 1px;position:absolute;background-image:url(/img/bg/d.jpg)'></div>";
+	var c5="<div onclick='c5_c()' id='c5' style='display:none;width:60px;height:60px;border-radius:50px; position:absolute;background-image:url(/img/bg/cha.png)'></div>";
+	var ssx=1;
+	var sx=0;
+	var sy=0;
+	
+	//$(document.body).css({cursor:"url(''),auto"});
+	$(document.body).css({cursor:"url('/mouse1.cur'),url('mouse1.cur'),auto"});
+		
+	
+	
+	$(document.body).append(c1);
+	$(document.body).append(c2);
+	$(document.body).append(c3);
+	$(document.body).append(c4);
+	$(document.body).append(c5);		
+
+            var backgroundnum = 24;
+            var backgroundimg = "url(/img/JRLyvX.jpg)";
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+
+    document.oncontextmenu = function() {
+    return false;
+}
+
+
+
+$(document).mousedown(function(e){
+	if(e.which==3){
+		//Բ��
+		ssx=1;
+		$("#c1").css("opacity",1);
+		$("#c2").css("opacity",1);
+		$("#c3").css("opacity",1);
+		$("#c4").css("opacity",1);
+		$("#c5").css("opacity",1);
+		$("#c5").css("display","none");
+		var x=e.clientX;
+		var y=e.clientY+ document.documentElement.scrollTop;
+		var cx=x-50;
+		var cy=y-50;
+		$("#c5").css("left",cx+20);
+		$("#c5").css("top",cy+20);
+		
+		sx=cx;sy=cy;
+		loop_a("c1",cx,cy);
+		loop_b("c2",cx,cy);
+		loop_c("c3",cx,cy);
+		loop_d("c4",cx,cy);
+		
+	}
+	if(e.which==1){
+		close("c1");
+		close("c2");
+		close("c3");
+		close("c4");
+		close("c5");
+	}
+	
+});
+
+function c1_c(){
+	window.location.href='/';
+}
+function c2_c(){
+	window.location.href='/record';
+}
+function c3_c(){
+	window.location.href='/works';
+}
+function c4_c(){
+	window.location.href='https://github.com/zzchong2233';
+}
+function c5_c(){
+	close("c1");
+	close("c2");
+	close("c3");
+	close("c4");
+	close("c5");
+}
+
+function m(name,offsetx,offsety){
+	$("#"+name+"").css("left",offsetx);
+	$("#"+name+"").css("top",offsety);
+	$("#"+name+"").css("display","");
+}
+
+function close(name){
+		if(ssx>=0.01){setTimeout(function()
+			{ssx-=0.005;$("#"+name+"").css("opacity",ssx);close(name);}
+		,6)	
+	}
+	else{
+		
+		
+	}
+}
+
+function loop_a(name,x,y){
+		if(x>=sx-60){m(name,x,y);setTimeout(function()
+			{loop_a(name,x-1,y-1);}
+		,1)	
+	}
+	else{
+	
+	}
+}
+
+function loop_b(name,x,y){
+		if(x<=sx+60){m(name,x,y);setTimeout(function()
+			{loop_b(name,x+1,y-1);}
+		,1)	
+	}
+	else{
+	$("#c5").css("display","");
+	}
+}
+
+function loop_c(name,x,y){
+		if(x>=sx-60){m(name,x,y);setTimeout(function()
+			{loop_c(name,x-1,y+1);}
+		,1)	
+	}
+	else{
+	
+	}
+}
+
+function loop_d(name,x,y){
+		if(x<=sx+60){m(name,x,y);setTimeout(function()
+			{loop_d(name,x+1,y+1);}
+		,1)	
+	}
+	else{
+	
+	}
+}
+    </script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
